@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id=dplayer></div>
+<script>
+      function getUrlArgs(){
+          var url_pid=window.location.search.substring(1);
+          var pairs = url_pid.split("&");
+          var urlinfo={};
+          for(var i = 0; i < pairs.length; i++) { 　
+              var pos = pairs[i].indexOf('=');
+              urlinfo[pairs[i].substring(0,pos)]=decodeURI(pairs[i].substring(pos+1));
+          } ;
+          return urlinfo;
+      };
+      var apaurl=getUrlArgs();
+var url=apaurl.url;
+
+
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    screenshot: true,
+    video: {
+        url: url,
+    },
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+
+</body>
+</html>
