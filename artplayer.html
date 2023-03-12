@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="artplayer-app"></div>
+<script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+<script>
+      function getUrlArgs(){
+          var url_pid=window.location.search.substring(1);
+          var pairs = url_pid.split("&");
+          var urlinfo={};
+          for(var i = 0; i < pairs.length; i++) { 　
+              var pos = pairs[i].indexOf('=');
+              urlinfo[pairs[i].substring(0,pos)]=decodeURI(pairs[i].substring(pos+1));
+          } ;
+          return urlinfo;
+      };
+      var apaurl=getUrlArgs();
+var url=apaurl.url;
+
+
+import Artplayer from 'artplayer';
+
+const art = new Artplayer({
+    container: '.artplayer-app',
+    url: url,
+});
+
+</script>
+
+
+</body>
+</html>
