@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            .artplayer-app {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 320px;
+            }
+        </style>
+    </head>
 <body>
 <div class="artplayer-app"></div>
 <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
@@ -16,9 +27,6 @@
       };
       var apaurl=getUrlArgs();
 var url=apaurl.url;
-
-
-import Artplayer from 'artplayer';
 
 const art = new Artplayer({
     container: '.artplayer-app',
